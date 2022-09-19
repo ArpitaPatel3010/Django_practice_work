@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+<body>
+    <form action="/get_data/" method="post">
+        {% csrf_token %}
+        {{view_form.Email}}
+        <input type="submit" />
+    </form>
+    <p>Name: {{Email_data.Name}}</p>
+    <p>Password: {{Email_data.Password}}</p>
+    
+    <h1>Update</h1>
+    <form action="/update_page/" method="post">
+        {% csrf_token %}
+        <p>Email: {{view_form.Email}}</p>
+        <p>Name: {{view_form.Name}}</p>
+        <p>Password: {{view_form.Password}}</p>
+        <input type="submit">
+    </form>
+</body>
+</html>
